@@ -1,0 +1,61 @@
+#hitung resistansi
+start:
+input "Pilih rangkaian (Paralel/Seri)= ", jenis
+IF LOWER(jenis) <> "paralel" and LOWER(jenis) <> "seri" THEN
+	print "Mohon pilih paralel/seri"
+	input "Klik enter untuk lanjutkan", z
+	cls
+	goto start
+ELSE
+	goto hitung
+ENDIF
+
+subroutine tulisHasil(a)
+	IF a = int(a) THEN
+		print "Total resistansimu adalah: "; int(a); " ohm"
+	ELSE
+		a = a*100
+		a = int(a)
+		a = a/100
+		print "Total resistansimu adalah: "; a; " ohm"
+	ENDIF
+endsubroutine
+
+hitung:
+hasil = 0
+hasilakhir = 0
+IF LOWER(jenis) = "seri" THEN
+	input "Jumlah resistor: ", n
+	dim jumlah(n)
+	FOR i = 0 TO (n-1)
+		INPUT "Resistansi resistor ke "; (i+1); ": ", resistansi
+		jumlah[i] = resistansi
+	NEXT i
+	FOR i = 0 TO (n-1)
+
+		hasilakhir = hasilakhir + int(jumlah[i])
+	NEXT i
+	call tulisHasil(hasilakhir)
+ENDIF
+IF LOWER(jenis) = "paralel" THEN
+	input "Jumlah resistor: ", n
+	dim jumlah(n)
+	FOR i = 0 TO (n-1)
+		INPUT "Resistansi resistor ke "; (i+1); ": ", resistansi
+		jumlah[i] = resistansi
+	NEXT i
+	FOR i = 0 TO (n-1)
+		hasil = hasil + 1/jumlah[i]
+	NEXT i
+	hasilakhir = 1/hasil
+	call tulisHasil(hasilakhir)
+ENDIF
+
+input "Hitung lagi? (Y/n): ", lagi
+IF lower(lagi) = "y" THEN
+	cls
+	goto start
+ELSE
+	END
+ENDIF
+		

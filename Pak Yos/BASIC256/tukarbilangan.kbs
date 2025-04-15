@@ -1,0 +1,8 @@
+#tukar bilangan
+input "a= ",a
+input "b= ",b
+sementara = a
+a = b
+b = sementara
+print "a= " + a
+print "b= " + b

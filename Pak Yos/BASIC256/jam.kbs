@@ -1,0 +1,36 @@
+fastgraphics
+while true
+color blue
+rect 0, 0, graphwidth, graphheight
+color white
+font "Times New Roman", 40, 100
+
+line$ = ""
+n = month + 1
+gosub addtoline
+line$ = line$ + "/" 
+n = day
+gosub addtoline
+line$ = line$ + "/"
+line$ = line$ + year
+text 15,100, line$
+line$ = ""
+n = hour
+gosub addtoline
+line$ = line$ + ":"
+n = minute
+gosub addtoline
+line$ = line$ + ":" 
+n = second
+gosub addtoline
+text 42,150, line$
+refresh
+end while
+
+addtoline:
+## append a two digit number in n to the string line$
+if n < 10 then 
+line$ = line$ + "0"
+endif
+line$ = line$ + n
+return

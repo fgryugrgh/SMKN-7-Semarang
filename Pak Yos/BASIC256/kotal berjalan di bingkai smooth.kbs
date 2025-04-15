@@ -1,0 +1,53 @@
+ #kotak berjalan di bingkai
+ clg
+ color white
+ rect 0,0,299,299 
+ color yellow
+ rect 0,100,300,10
+ rect 290,100,10,290
+ rect 0,100,10,290
+ rect 10,290,300,10
+ for i = 1 to 3
+ for a = 0 to 290
+ call rel(1, a)
+ color red
+ rect a,100,10,10
+ next a
+ for b = 0 to 190
+ call rel(2, b)
+ color red
+ rect 290,100+b,10,10
+ next b
+ for c = 290 to 0 step-1
+ call rel(3, c)
+ color red
+ rect c,290,10,10
+ next c
+ for d = 290 to 100 step-1
+ call rel(4, d)
+ color red
+ rect 0,d,10,10
+ next d
+ next i
+ End
+
+ subroutine rel(tipe, val)
+ color yellow
+ if tipe = 1 then
+ rect val,100,-10,10
+ endif
+ if tipe = 2 then
+ if val < 10 then
+ color white
+ rect 290,90,10,10
+ endif
+ color yellow
+ rect 290,val+90,10,10
+ endif
+ if tipe = 3 then
+ rect val+10,290,10,10
+ endif
+ if tipe = 4 then
+ rect 0,val+10,10,10
+ endif
+ endsubroutine

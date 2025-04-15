@@ -1,0 +1,31 @@
+#rumus kuadrat
+input "nilai a= ", a
+input "nilai b= ", b
+input "nilai c= ", c
+
+discriminant = b^2-(4*(a*c))
+
+subroutine tulisHasil(a, b)
+	IF a = int(a) AND b = int(b) THEN
+		print "hasil persamaan kuadrat mu adalah= (" + a + ", " + b + ")"
+	ELSE
+		a = a*100
+		a = int(a)
+		a = a/100
+		b = b*100
+		b = int(b)
+		b = b/100
+		print "hasil persamaan kuadrat mu adalah= (" + a + ", " + b + ")"
+	ENDIF
+endsubroutine
+
+IF discriminant > 0 THEN
+	hasil1 = ((0-b)+ sqr(discriminant))/(2*a)
+	hasil2 = ((0-b)- sqr(discriminant))/(2*a)
+	call tulisHasil(hasil1, hasil2)
+ELSE
+	print "diskriminan negatif, tidak dapat menyelesaikan persamaan"
+ENDIF
+
+
+

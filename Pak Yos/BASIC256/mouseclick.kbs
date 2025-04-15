@@ -1,0 +1,20 @@
+
+# mouseclick.kbs
+# X marks the spot where you click
+print "Arahkan mouse ke window grafis”" 
+print "klik tombol kanan mouse untuk beritanda"
+print "klik kanan akhiri program." 
+clg
+clickclear
+while clickb <> 2
+
+# clear klik terakhir tunggu klik berikut
+clickclear
+while clickb = 0
+pause .01
+end while
+color blue
+stamp clickx, clicky, 5, {-1, -2, 0, -1, 1,-2, 2, -1, 1, 0, 2, 1, 1, 2, 0, 1, -1, 2, -2, 1, -1, 0, -2, -1}
+end while
+print "all done." 
+End

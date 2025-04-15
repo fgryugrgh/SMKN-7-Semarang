@@ -1,0 +1,36 @@
+clg
+color white
+rect 0,0,300,300
+color red
+circle 149,149,100
+color white
+circle 149,149,75
+color green
+circle 149,149,50
+color white
+circle 149,149,25
+
+color black
+for x = 0 to 30
+	x1= x*10
+	line 0,x1,x1,300
+next
+
+color black
+for x = 0 to 30
+	x1= x*10
+	line x1,0,300,x1
+next
+
+color black
+for x = 0 to 30
+	x1= x*10
+	line 0,x1,300-x1,0
+next
+
+color black
+for x = 0 to 30
+	x1= x*10
+	line 300,x1,300-x1,300
+next
+

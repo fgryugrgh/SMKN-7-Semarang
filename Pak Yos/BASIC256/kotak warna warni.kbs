@@ -1,0 +1,32 @@
+#kotal warna warni
+clg
+color white 
+rect 0,0,299,299 
+for a = 1 to 10 
+	gosub semua 
+	pause .5 
+	rect 20,100,50,50 
+	pause .5 
+	gosub semua
+	rect 80,100,50,50 
+	pause .5 
+	gosub semua
+	rect 140,100,50,50 
+	pause .5 
+	gosub semua
+	rect 200,100,50,50 
+	pause .5 
+next a 
+End
+
+semua: 
+	color red 
+	rect 20,100,50,50 
+	color yellow 
+	rect 80,100,50,50 
+	color green 
+	rect 140,100,50,50 
+	color blue 
+	rect 200,100,50,50 
+	color white
+return 

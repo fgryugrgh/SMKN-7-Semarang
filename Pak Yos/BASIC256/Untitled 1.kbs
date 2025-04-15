@@ -1,0 +1,17 @@
+
+a=1
+b=2
+gosub kurang
+print "c"
+goto tambah
+
+kurang:
+c = a-b
+print c
+return
+
+tambah:
+c = a+b
+print c
+
+print a
